@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.entity.Loan;
+import com.example.demo.entity.CustomerLoan;
 import com.example.demo.service.LoanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,15 +17,15 @@ public class LoanController {
 
     // Endpoint to get all loans
     @GetMapping
-    public ResponseEntity<List<Loan>> getAllLoans() {
-        List<Loan> loans = loanService.getAllLoans();
+    public ResponseEntity<List<CustomerLoan>> getAllLoans() {
+        List<CustomerLoan> loans = loanService.getAllLoans();
         return new ResponseEntity<>(loans, HttpStatus.OK);
     }
 
     // Endpoint to get a loan by ID
     @GetMapping("/{id}")
-    public ResponseEntity<Loan> getLoanById(@PathVariable Long id) {
-        Loan loan = loanService.getLoanById(id);
+    public ResponseEntity<CustomerLoan> getLoanById(@PathVariable Long id) {
+        CustomerLoan loan = loanService.getLoanById(id);
         if (loan != null) {
             return new ResponseEntity<>(loan, HttpStatus.OK);
         } else {
@@ -35,15 +35,15 @@ public class LoanController {
 
     // Endpoint to apply for a loan
     @PostMapping("/apply")
-    public ResponseEntity<Loan> applyForLoan(@RequestBody Loan loan) {
-        Loan appliedLoan = loanService.applyForLoan(loan);
+    public ResponseEntity<CustomerLoan> applyForLoan(@RequestBody CustomerLoan loan) {
+        CustomerLoan appliedLoan = loanService.applyForLoan(loan);
         return new ResponseEntity<>(appliedLoan, HttpStatus.CREATED);
     }
 
     // Endpoint to update a loan
     @PutMapping("/{id}")
-    public ResponseEntity<Loan> updateLoan(@PathVariable Long id, @RequestBody Loan updatedLoan) {
-        Loan loan = loanService.updateLoan(id, updatedLoan);
+    public ResponseEntity<CustomerLoan> updateLoan(@PathVariable Long id, @RequestBody CustomerLoan updatedLoan) {
+        CustomerLoan loan = loanService.updateLoan(id, updatedLoan);
         if (loan != null) {
             return new ResponseEntity<>(loan, HttpStatus.OK);
         } else {

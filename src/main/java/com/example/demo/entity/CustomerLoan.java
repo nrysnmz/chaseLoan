@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Loan {
+public class CustomerLoan {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,12 +21,12 @@ public class Loan {
     // Constructors, getters, and setters
 
     // Default constructor
-    public Loan() {
+    public CustomerLoan() {
         // Default constructor for JPA
     }
 
     // Parameterized constructor
-    public Loan(String applicantName, double amount, double interestRate, boolean approved) {
+    public CustomerLoan(String applicantName, double amount, double interestRate, boolean approved) {
         this.applicantName = applicantName;
         this.amount = amount;
         this.interestRate = interestRate;
