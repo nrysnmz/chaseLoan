@@ -16,7 +16,7 @@ public class LoanController {
     private LoanService loanService;
 
     // Endpoint to get all loans
-    @GetMapping
+    @GetMapping("/nuray")
     public ResponseEntity<List<CustomerLoan>> getAllLoans() {
         List<CustomerLoan> loans = loanService.getAllLoans();
         return new ResponseEntity<>(loans, HttpStatus.OK);

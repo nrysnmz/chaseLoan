@@ -1,46 +1,13 @@
 package com.example.demo.service;
 
-public class Car {
-    // Fields
-    String make;
-    static String model;
-    int year;
+import java.io.IOException;
+import java.util.Optional;
 
-    {
-        String a = "hi";
-        make = "tt";
-        model = "hi";
-    }
+ class Car {
 
-    // Constructor
-    public Car(String make, String model, int year) {
-        this.make = make;
-        this.model = model;
-        this.year = year;
-    }
+     int nonStatic =2;
+     static int staticValue = 3;
+     public static void main(String[] args) {
 
-    // Method to display car information
-    public void displayInfo() {
-        System.out.println("Make: " + make);
-        System.out.println("Model: " + model);
-        System.out.println("Year: " + year);
-    }
-
-    public static void main(String[] args) {
-        // Creating an instance of the Car class using the constructor
-
-        String  a =null;
-        System.out.println("hello " + a.hashCode());
-
-//        add(3)
-    }
-
-    public static int add(int a, int b) {
-        return a + b;
-    }
-
-    public static double add(double a, double b) {
-        return a + b;
-    }
+     }
 }
-
